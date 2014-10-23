@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
                             
     @IBOutlet var messageLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var enterNameTextField: UITextField!
     
@@ -32,13 +33,22 @@ class ViewController: UIViewController {
 
 
     @IBAction func sendMailButtonPressed(sender: UIButton) {
-        // Code will evaluate when we press the button
-        // Addin a comment here to test commit
+        
+        //Change message label and clear message text box
         messageLabel.hidden = false
         messageLabel.text = enterAMessageTextField.text
+        messageLabel.textColor = UIColor.redColor()
         enterAMessageTextField.text = ""
         enterAMessageTextField.resignFirstResponder()
-        messageLabel.textColor = UIColor.redColor()
+        
+        //Change name label and clear name text box
+        nameLabel.hidden = false
+        nameLabel.text = enterNameTextField.text
+        nameLabel.textColor = UIColor.blueColor()
+        enterNameTextField.text = ""
+        enterNameTextField.resignFirstResponder()
+        
+        //Chine button title
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
     }
 
